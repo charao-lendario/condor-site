@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONDOR - Auditoria &amp; Consultoria</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   CONDOR Auditoria & Consultoria — Institutional Template
+   BrandCraft Forge | Redesign Premium
+   Visual: Moderno, Sofisticado, Autoridade, Confianca
+   ================================================================ */
+
+/* ── CSS Custom Properties ── */
+:root {
+  --bc-color-primary: #1a2744;
+  --bc-color-primary-light: #2a3855;
+  --bc-color-primary-dark: #0f1a30;
+  --bc-color-primary-rgb: 26, 39, 68;
+  --bc-color-accent: #c9a84c;
+  --bc-color-accent-light: #dbb95d;
+  --bc-color-accent-dark: #b08f3a;
+  --bc-color-accent-rgb: 201, 168, 76;
+  --bc-color-success: #2d9a5a;
+  --bc-color-info: #3680b3;
+  --bc-color-text: #4a4a4a;
+  --bc-color-text-heading: #1a2744;
+  --bc-color-text-muted: #7a7a7a;
+  --bc-color-text-white: #ffffff;
+  --bc-bg-body: #ffffff;
+  --bc-bg-light: #f8f9fb;
+  --bc-bg-navy: #1a2744;
+  --bc-bg-navy-light: #223254;
+  --bc-bg-navy-muted: #2e3f5c;
+  --bc-border-color: #e4e7ec;
+  --bc-font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bc-font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bc-shadow-subtle: 0 1px 3px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.06);
+  --bc-shadow-medium: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --bc-shadow-elevated: 0 8px 32px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  --bc-radius: 6px;
+  --bc-radius-lg: 12px;
+  --bc-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--bc-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--bc-color-text);
+  background: var(--bc-bg-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--bc-font-heading);
+  color: var(--bc-color-text-heading);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+a { color: var(--bc-color-primary-light); text-decoration: none; transition: var(--bc-transition); }
+a:hover { color: var(--bc-color-accent); }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ── Container ── */
+.bc-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── Buttons ── */
+.bc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--bc-font-heading);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1;
+  padding: 1rem 2rem;
+  border: 2px solid transparent;
+  border-radius: var(--bc-radius);
+  cursor: pointer;
+  transition: var(--bc-transition);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.bc-btn-accent {
+  background: var(--bc-color-accent);
+  color: var(--bc-color-primary-dark);
+  border-color: var(--bc-color-accent);
+}
+.bc-btn-accent:hover {
+  background: var(--bc-color-accent-light);
+  border-color: var(--bc-color-accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(var(--bc-color-accent-rgb), 0.4);
+}
+.bc-btn-outline-white {
+  background: transparent;
+  color: var(--bc-color-text-white);
+  border-color: rgba(255,255,255,0.4);
+}
+.bc-btn-outline-white:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--bc-color-text-white);
+}
+.bc-btn-outline {
+  background: transparent;
+  color: var(--bc-color-primary);
+  border-color: var(--bc-color-primary);
+}
+.bc-btn-outline:hover {
+  background: var(--bc-color-primary);
+  color: var(--bc-color-text-white);
+}
+.bc-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.25s ease;
+}
+.bc-btn:hover svg { transform: translateX(3px); }
+
+/* ================================================================
+   NAVBAR
+   ================================================================ */
+.bc-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0;
+  transition: var(--bc-transition);
+}
+.bc-navbar.scrolled {
+  box-shadow: var(--bc-shadow-subtle);
+}
+.bc-navbar .bc-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.bc-navbar-logo img { height: 48px; width: auto; }
+.bc-navbar-nav {
+  display: flex;
+  list-style: none;
+  gap: 0;
+}
+.bc-navbar-nav li a {
+  font-family: var(--bc-font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bc-color-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 1.25rem;
+  display: block;
+  position: relative;
+}
+.bc-navbar-nav li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--bc-color-accent);
+  transition: width 0.3s ease;
+}
+.bc-navbar-nav li a:hover,
+.bc-navbar-nav li a.active {
+  color: var(--bc-color-primary);
+}
+.bc-navbar-nav li a:hover::after,
+.bc-navbar-nav li a.active::after {
+  width: 100%;
+}
+.bc-navbar-cta {
+  font-family: var(--bc-font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bc-color-text-white);
+  background: var(--bc-color-primary);
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--bc-radius);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--bc-transition);
+}
+.bc-navbar-cta:hover {
+  background: var(--bc-color-accent);
+  color: var(--bc-color-primary-dark);
+}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.bc-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bc-bg-navy);
+  overflow: hidden;
+}
+.bc-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+.bc-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 26, 48, 0.95) 0%,
+    rgba(26, 39, 68, 0.85) 40%,
+    rgba(42, 56, 85, 0.7) 100%
+  );
+}
+.bc-hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(30deg, #fff 12%, transparent 12.5%, transparent 87%, #fff 87.5%, #fff),
+    linear-gradient(150deg, #fff 12%, transparent 12.5%, transparent 87%, #fff 87.5%, #fff),
+    linear-gradient(30deg, #fff 12%, transparent 12.5%, transparent 87%, #fff 87.5%, #fff),
+    linear-gradient(150deg, #fff 12%, transparent 12.5%, transparent 87%, #fff 87.5%, #fff),
+    linear-gradient(60deg, rgba(255,255,255,0.5) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0.5)),
+    linear-gradient(60deg, rgba(255,255,255,0.5) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0.5));
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+.bc-hero .bc-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  min-height: 100vh;
+  padding-top: 72px;
+}
+.bc-hero-content {
+  max-width: 620px;
+}
+.bc-hero-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bc-hero-image img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: var(--bc-radius-lg);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+.bc-hero-image::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid rgba(var(--bc-color-accent-rgb), 0.3);
+  border-radius: var(--bc-radius-lg);
+  z-index: -1;
+}
+.bc-hero-image::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  width: 80px;
+  height: 80px;
+  background: rgba(var(--bc-color-accent-rgb), 0.15);
+  border-radius: var(--bc-radius-lg);
+  z-index: -1;
+}
+.bc-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--bc-font-heading);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--bc-color-accent);
+  margin-bottom: 1.5rem;
+}
+.bc-hero-badge::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--bc-color-accent);
+}
+.bc-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--bc-color-text-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+}
+.bc-hero h1 span {
+  color: var(--bc-color-accent);
+}
+.bc-hero p {
+  font-size: 1.125rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+}
+.bc-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.bc-hero-accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bc-color-accent), transparent);
+}
+
+/* ================================================================
+   TRUST BAR
+   ================================================================ */
+.bc-trust-bar {
+  background: var(--bc-bg-light);
+  border-bottom: 1px solid var(--bc-border-color);
+  padding: 1.75rem 0;
+}
+.bc-trust-bar .bc-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.bc-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--bc-font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--bc-color-text-muted);
+  letter-spacing: 0.5px;
+}
+.bc-trust-item svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--bc-color-accent);
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   SECTIONS BASE
+   ================================================================ */
+.bc-section {
+  padding: 6rem 0;
+}
+.bc-section-navy {
+  background: var(--bc-bg-navy);
+}
+.bc-section-light {
+  background: var(--bc-bg-light);
+}
+.bc-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.bc-section-badge {
+  display: inline-block;
+  font-family: var(--bc-font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--bc-color-accent);
+  margin-bottom: 1rem;
+}
+.bc-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.3px;
+}
+.bc-section-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--bc-color-accent);
+  margin: 1.25rem auto;
+  border-radius: 2px;
+}
+.bc-section-header p {
+  font-size: 1.0625rem;
+  color: var(--bc-color-text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ================================================================
+   ABOUT
+   ================================================================ */
+.bc-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.bc-about-image-wrapper {
+  position: relative;
+}
+.bc-about-image {
+  border-radius: var(--bc-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--bc-shadow-elevated);
+}
+.bc-about-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+.bc-about-accent-box {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--bc-color-primary);
+  color: var(--bc-color-text-white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--bc-radius);
+  box-shadow: var(--bc-shadow-medium);
+  text-align: center;
+}
+.bc-about-accent-box .number {
+  font-family: var(--bc-font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--bc-color-accent);
+  line-height: 1;
+  display: block;
+}
+.bc-about-accent-box .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+  display: block;
+  opacity: 0.8;
+}
+.bc-about-text h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.2px;
+}
+.bc-about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--bc-color-text);
+}
+.bc-about-text p:last-of-type {
+  font-weight: 500;
+  color: var(--bc-color-text-heading);
+  font-style: italic;
+}
+.bc-about-cta {
+  margin-top: 2rem;
+}
+
+/* ================================================================
+   STATS
+   ================================================================ */
+.bc-stats-section {
+  background: var(--bc-bg-navy);
+  padding: 4.5rem 0;
+  position: relative;
+}
+.bc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.bc-stat {
+  text-align: center;
+  position: relative;
+}
+.bc-stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.12);
+}
+.bc-stat-number {
+  font-family: var(--bc-font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--bc-color-accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.bc-stat-label {
+  font-family: var(--bc-font-heading);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* ================================================================
+   SERVICES
+   ================================================================ */
+.bc-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.bc-service-card {
+  background: var(--bc-bg-body);
+  border: 1px solid var(--bc-border-color);
+  border-radius: var(--bc-radius-lg);
+  padding: 2.5rem 2rem;
+  transition: var(--bc-transition);
+  position: relative;
+  overflow: hidden;
+}
+.bc-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--bc-color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.bc-service-card:hover {
+  border-color: rgba(var(--bc-color-primary-rgb), 0.15);
+  box-shadow: var(--bc-shadow-elevated);
+  transform: translateY(-4px);
+}
+.bc-service-card:hover::before {
+  transform: scaleX(1);
+}
+.bc-service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--bc-radius);
+  background: rgba(var(--bc-color-primary-rgb), 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: var(--bc-transition);
+}
+.bc-service-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--bc-color-primary);
+  transition: var(--bc-transition);
+}
+.bc-service-card:hover .bc-service-icon {
+  background: var(--bc-color-primary);
+}
+.bc-service-card:hover .bc-service-icon svg {
+  fill: var(--bc-color-accent);
+}
+.bc-service-card h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.bc-service-card p {
+  font-size: 0.9375rem;
+  color: var(--bc-color-text-muted);
+  line-height: 1.65;
+}
+
+/* ================================================================
+   INFORMATIVOS / MARKET DATA
+   ================================================================ */
+.bc-market-section {
+  padding: 6rem 0;
+  background: var(--bc-bg-body);
+}
+.bc-market-grid-live {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.bc-market-card {
+  background: var(--bc-bg-body);
+  border: 1px solid var(--bc-border-color);
+  border-radius: var(--bc-radius-lg);
+  padding: 1.75rem;
+  transition: var(--bc-transition);
+  position: relative;
+  overflow: hidden;
+}
+.bc-market-card:hover {
+  border-color: rgba(var(--bc-color-primary-rgb), 0.15);
+  box-shadow: var(--bc-shadow-medium);
+}
+.bc-market-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.bc-market-card-header h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.bc-market-card-header .bc-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bc-color-success);
+  animation: bc-pulse 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes bc-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(45, 154, 90, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(45, 154, 90, 0); }
+}
+.bc-market-card .tradingview-widget-container {
+  min-height: 46px;
+}
+.bc-market-card .tradingview-widget-copyright { display: none; }
+
+.bc-market-grid-indices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.bc-index-card {
+  background: var(--bc-bg-light);
+  border: 1px solid var(--bc-border-color);
+  border-radius: var(--bc-radius-lg);
+  padding: 1.75rem;
+  transition: var(--bc-transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.bc-index-card:hover {
+  border-color: rgba(var(--bc-color-primary-rgb), 0.2);
+  box-shadow: var(--bc-shadow-medium);
+  transform: translateY(-2px);
+  color: inherit;
+}
+.bc-index-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.bc-index-card-top h5 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin: 0;
+}
+.bc-index-card-top svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--bc-color-text-muted);
+  flex-shrink: 0;
+}
+.bc-index-subtitle {
+  font-size: 0.75rem;
+  color: var(--bc-color-text-muted);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+.bc-index-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--bc-border-color);
+  margin-bottom: 1rem;
+}
+.bc-index-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.bc-index-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--bc-font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.bc-index-badge.up {
+  background: rgba(45, 154, 90, 0.1);
+  color: #1a7a3a;
+}
+.bc-index-badge.down {
+  background: rgba(179, 54, 65, 0.1);
+  color: #b33641;
+}
+.bc-index-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+.bc-index-change {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--bc-color-text);
+}
+.bc-index-period {
+  font-size: 0.75rem;
+  color: var(--bc-color-text-muted);
+}
+.bc-index-points {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--bc-color-text-muted);
+}
+.bc-index-points strong {
+  color: var(--bc-color-text-heading);
+  font-weight: 700;
+}
+
+.bc-market-footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bc-border-color);
+}
+.bc-market-footer p {
+  font-size: 0.75rem;
+  color: var(--bc-color-text-muted);
+}
+.bc-market-footer a {
+  color: var(--bc-color-accent-dark);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .bc-market-grid-live { grid-template-columns: 1fr; }
+  .bc-market-grid-indices { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .bc-market-grid-indices { grid-template-columns: 1fr; }
+}
+
+/* ================================================================
+   CTA / NEWSLETTER
+   ================================================================ */
+.bc-cta-section {
+  background: var(--bc-bg-navy);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.bc-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(var(--bc-color-accent-rgb), 0.04);
+}
+.bc-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.bc-cta-form-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3rem;
+  border-radius: var(--bc-radius-lg);
+  backdrop-filter: blur(8px);
+}
+.bc-cta-form-box h3 {
+  color: var(--bc-color-text-white);
+  font-size: 1.625rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.bc-cta-form-box p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 2rem;
+  line-height: 1.65;
+}
+.bc-cta-form {
+  display: flex;
+  gap: 0.75rem;
+}
+.bc-cta-form input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--bc-radius);
+  background: rgba(255,255,255,0.06);
+  color: var(--bc-color-text-white);
+  font-family: var(--bc-font-body);
+  font-size: 0.875rem;
+  transition: var(--bc-transition);
+}
+.bc-cta-form input:focus {
+  outline: none;
+  border-color: var(--bc-color-accent);
+  background: rgba(255,255,255,0.08);
+}
+.bc-cta-form input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+.bc-cta-links-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.bc-cta-watermark {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 280px;
+  height: auto;
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+  filter: brightness(10);
+}
+.bc-cta-nav {
+  list-style: none;
+}
+.bc-cta-nav li { margin-bottom: 0.875rem; }
+.bc-cta-nav a {
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: var(--bc-transition);
+}
+.bc-cta-nav a:hover {
+  color: var(--bc-color-accent);
+  padding-left: 4px;
+}
+.bc-social-list {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+}
+.bc-social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--bc-transition);
+  color: #ffffff;
+}
+.bc-social-link:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.5);
+  color: #ffffff;
+}
+.bc-social-link svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+  transition: var(--bc-transition);
+}
+.bc-social-link svg path {
+  fill: #ffffff;
+}
+.bc-social-link:hover svg,
+.bc-social-link:hover svg path {
+  fill: #ffffff;
+}
+
+/* ================================================================
+   WHATSAPP FLOATING BUTTON
+   ================================================================ */
+.bc-whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(0,0,0,0.15);
+  transition: var(--bc-transition);
+  text-decoration: none;
+}
+.bc-whatsapp-float:hover {
+  background: #1ebe5d;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5), 0 3px 8px rgba(0,0,0,0.2);
+}
+.bc-whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+}
+.bc-whatsapp-float::after {
+  content: 'Fale conosco';
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: var(--bc-color-text-heading);
+  font-family: var(--bc-font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--bc-radius);
+  box-shadow: var(--bc-shadow-medium);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.bc-whatsapp-float:hover::after {
+  opacity: 1;
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.bc-footer {
+  background: var(--bc-color-primary-dark);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.bc-footer .bc-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bc-footer-logo img {
+  height: 28px;
+  width: auto;
+  opacity: 0.7;
+}
+.bc-footer-copy {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* ================================================================
+   MOBILE MENU (hamburger)
+   ================================================================ */
+.bc-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1001;
+}
+.bc-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--bc-color-text-heading);
+  border-radius: 2px;
+  transition: var(--bc-transition);
+}
+.bc-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.bc-hamburger.active span:nth-child(2) { opacity: 0; }
+.bc-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.bc-mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.bc-mobile-overlay.active { opacity: 1; }
+
+.bc-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: var(--bc-bg-body);
+  z-index: 999;
+  padding: 5rem 2rem 2rem;
+  box-shadow: var(--bc-shadow-elevated);
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+.bc-mobile-menu.active { right: 0; }
+.bc-mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bc-mobile-menu ul li { border-bottom: 1px solid var(--bc-border-color); }
+.bc-mobile-menu ul li a {
+  display: block;
+  padding: 1rem 0;
+  font-family: var(--bc-font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--bc-color-text-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bc-mobile-menu ul li a:hover { color: var(--bc-color-accent); }
+.bc-mobile-menu .bc-mobile-cta {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* ================================================================
+   RESPONSIVE — Widescreen (1440px+)
+   ================================================================ */
+@media (min-width: 1440px) {
+  .bc-container { max-width: 1320px; }
+  .bc-hero h1 { font-size: 4rem; }
+  .bc-hero p { font-size: 1.25rem; max-width: 600px; }
+  .bc-hero-image img { max-width: 580px; }
+  .bc-section { padding: 7rem 0; }
+  .bc-section-header h2 { font-size: 2.75rem; }
+  .bc-services-grid { gap: 2.5rem; }
+  .bc-service-card { padding: 3rem 2.5rem; }
+  .bc-stats-section { padding: 5.5rem 0; }
+  .bc-stat-number { font-size: 3.5rem; }
+  .bc-about-image img { height: 540px; }
+  .bc-about-text h3 { font-size: 2rem; }
+  .bc-cta-form-box { padding: 3.5rem; }
+}
+
+/* ================================================================
+   RESPONSIVE — Ultrawide (1920px+)
+   ================================================================ */
+@media (min-width: 1920px) {
+  .bc-container { max-width: 1480px; }
+  .bc-hero h1 { font-size: 4.5rem; }
+  .bc-hero-content { max-width: 700px; }
+  .bc-hero-image img { max-width: 640px; }
+  .bc-section { padding: 8rem 0; }
+  .bc-section-header { margin-bottom: 5rem; }
+  .bc-section-header h2 { font-size: 3rem; }
+  .bc-services-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .bc-market-grid-live { gap: 2rem; }
+  .bc-market-grid-indices { gap: 2rem; }
+}
+
+/* ================================================================
+   RESPONSIVE — Laptop / Small Desktop (1024px - 1279px)
+   ================================================================ */
+@media (max-width: 1279px) {
+  .bc-hero .bc-container { gap: 2rem; }
+  .bc-hero h1 { font-size: 2.75rem; }
+  .bc-hero-image img { max-width: 420px; }
+  .bc-hero-image::before { width: 80px; height: 80px; top: -8px; right: -8px; }
+  .bc-hero-image::after { width: 60px; height: 60px; bottom: -8px; left: -8px; }
+  .bc-navbar-nav li a { padding: 1.5rem 0.875rem; font-size: 0.6875rem; }
+}
+
+/* ================================================================
+   RESPONSIVE — Tablet (768px - 1023px)
+   ================================================================ */
+@media (max-width: 1023px) {
+  .bc-container { padding: 0 1.5rem; }
+  .bc-navbar-nav { display: none; }
+  .bc-navbar-cta { display: none; }
+  .bc-hamburger { display: flex; }
+  .bc-mobile-menu { display: block; }
+  .bc-mobile-overlay { display: block; }
+
+  /* Hero */
+  .bc-hero .bc-container { grid-template-columns: 1fr 1fr; }
+  .bc-hero h1 { font-size: 2.25rem; }
+  .bc-hero p { font-size: 1rem; }
+  .bc-hero-image img { max-width: 360px; }
+  .bc-hero-image::before, .bc-hero-image::after { display: none; }
+
+  /* Sections */
+  .bc-section { padding: 4.5rem 0; }
+  .bc-section-header h2 { font-size: 2rem; }
+  .bc-section-header { margin-bottom: 3rem; }
+
+  /* About */
+  .bc-about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .bc-about-image img { height: 360px; }
+  .bc-about-accent-box { bottom: 1rem; right: 1rem; }
+
+  /* Stats */
+  .bc-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .bc-stat:not(:last-child)::after { display: none; }
+  .bc-stat-number { font-size: 2.5rem; }
+
+  /* Services */
+  .bc-services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .bc-service-card { padding: 2rem 1.5rem; }
+
+  /* Market */
+  .bc-market-grid-live { grid-template-columns: 1fr; }
+  .bc-market-grid-indices { grid-template-columns: repeat(2, 1fr); }
+
+  /* CTA */
+  .bc-cta-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .bc-cta-form-box { padding: 2.5rem; }
+
+  /* Trust bar */
+  .bc-trust-bar .bc-container { gap: 1.5rem; justify-content: center; }
+}
+
+/* ================================================================
+   RESPONSIVE — Large Phone / Small Tablet (481px - 767px)
+   ================================================================ */
+@media (max-width: 767px) {
+  .bc-hero .bc-container { grid-template-columns: 1fr; }
+  .bc-hero-image { display: none; }
+  .bc-hero { min-height: 85vh; }
+  .bc-hero h1 { font-size: 2.25rem; }
+  .bc-hero-content { max-width: 100%; }
+
+  .bc-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .bc-market-grid-indices { grid-template-columns: repeat(2, 1fr); }
+  .bc-stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .bc-trust-bar .bc-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .bc-about-image img { height: 280px; }
+  .bc-about-text h3 { font-size: 1.5rem; }
+
+  .bc-footer .bc-container { flex-direction: column; gap: 0.75rem; text-align: center; }
+}
+
+/* ================================================================
+   RESPONSIVE — Mobile (max 480px)
+   ================================================================ */
+@media (max-width: 480px) {
+  .bc-container { padding: 0 1.25rem; }
+  .bc-section { padding: 3.5rem 0; }
+  .bc-section-header { margin-bottom: 2.5rem; }
+
+  /* Navbar */
+  .bc-navbar .bc-container { height: 60px; }
+  .bc-navbar-logo img { height: 38px; }
+
+  /* Hero */
+  .bc-hero { min-height: 80vh; }
+  .bc-hero .bc-container { padding-top: 60px; }
+  .bc-hero h1 { font-size: 1.75rem; margin-bottom: 1rem; }
+  .bc-hero p { font-size: 0.9375rem; margin-bottom: 1.75rem; line-height: 1.65; }
+  .bc-hero-badge { font-size: 0.625rem; letter-spacing: 2px; margin-bottom: 1rem; }
+  .bc-hero-actions { flex-direction: column; gap: 0.75rem; }
+  .bc-hero-actions .bc-btn { width: 100%; justify-content: center; padding: 0.875rem 1.5rem; }
+
+  /* Trust bar */
+  .bc-trust-bar { padding: 1.25rem 0; }
+  .bc-trust-bar .bc-container { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .bc-trust-item { font-size: 0.6875rem; gap: 0.5rem; }
+  .bc-trust-item svg { width: 16px; height: 16px; }
+
+  /* Section headers */
+  .bc-section-header h2 { font-size: 1.5rem; }
+  .bc-section-header p { font-size: 0.9375rem; }
+  .bc-section-badge { font-size: 0.625rem; letter-spacing: 2.5px; }
+
+  /* About */
+  .bc-about-grid { gap: 2rem; }
+  .bc-about-image img { height: 220px; }
+  .bc-about-accent-box { padding: 1rem 1.25rem; }
+  .bc-about-accent-box .number { font-size: 1.75rem; }
+  .bc-about-accent-box .label { font-size: 0.625rem; }
+  .bc-about-text h3 { font-size: 1.375rem; }
+  .bc-about-text p { font-size: 0.9375rem; }
+
+  /* Stats */
+  .bc-stats-section { padding: 3rem 0; }
+  .bc-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .bc-stat-number { font-size: 2rem; }
+  .bc-stat-label { font-size: 0.625rem; letter-spacing: 1px; }
+
+  /* Services */
+  .bc-services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .bc-service-card { padding: 1.75rem 1.5rem; }
+  .bc-service-card h4 { font-size: 1rem; }
+  .bc-service-card p { font-size: 0.875rem; }
+  .bc-service-icon { width: 48px; height: 48px; margin-bottom: 1.25rem; }
+  .bc-service-icon svg { width: 20px; height: 20px; }
+
+  /* Market / Informativos */
+  .bc-market-section { padding: 3.5rem 0; }
+  .bc-market-grid-indices { grid-template-columns: 1fr; gap: 1rem; }
+  .bc-market-card { padding: 1.25rem; }
+  .bc-index-card { padding: 1.25rem; }
+
+  /* CTA */
+  .bc-cta-section { padding: 3.5rem 0; }
+  .bc-cta-form-box { padding: 2rem 1.5rem; }
+  .bc-cta-form-box h3 { font-size: 1.25rem; }
+  .bc-cta-form { flex-direction: column; }
+  .bc-cta-form .bc-btn { width: 100%; justify-content: center; }
+  .bc-cta-nav a { font-size: 0.875rem; }
+  .bc-cta-watermark { width: 180px; opacity: 0.04; }
+
+  /* Social */
+  .bc-social-list { gap: 0.5rem; }
+  .bc-social-link { width: 36px; height: 36px; }
+  .bc-social-link svg { width: 14px; height: 14px; }
+
+  /* Footer */
+  .bc-footer { padding: 1.25rem 0; }
+  .bc-footer-logo img { height: 24px; }
+  .bc-footer-copy { font-size: 0.75rem; }
+
+  /* WhatsApp button */
+  .bc-whatsapp-float { width: 52px; height: 52px; bottom: 1rem; right: 1rem; }
+  .bc-whatsapp-float svg { width: 28px; height: 28px; }
+  .bc-whatsapp-float::after { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="bc-navbar" data-slot="navbar">
+  <div class="bc-container">
+    <a href="#" class="bc-navbar-logo">
+      <img src="logos/logo.png" alt="CONDOR Auditoria &amp; Consultoria" height="36">
+    </a>
+    <ul class="bc-navbar-nav">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#institucional">Institucional</a></li>
+      <li><a href="#servicos">Areas de Atuacao</a></li>
+      <li><a href="#informativos">Informativos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#contato" class="bc-navbar-cta">Fale Conosco</a>
+    <button class="bc-hamburger" id="bc-hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="bc-mobile-overlay" id="bc-mobile-overlay"></div>
+<nav class="bc-mobile-menu" id="bc-mobile-menu">
+  <ul>
+    <li><a href="#" class="bc-mobile-link">Home</a></li>
+    <li><a href="#institucional" class="bc-mobile-link">Institucional</a></li>
+    <li><a href="#servicos" class="bc-mobile-link">Areas de Atuacao</a></li>
+    <li><a href="#informativos" class="bc-mobile-link">Informativos</a></li>
+    <li><a href="#contato" class="bc-mobile-link">Fale Conosco</a></li>
+  </ul>
+  <a href="#contato" class="bc-btn bc-btn-accent bc-mobile-cta bc-mobile-link">Fale com um Especialista</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="bc-hero" data-slot="hero">
+  <div class="bc-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80');"></div>
+  <div class="bc-hero-overlay"></div>
+  <div class="bc-hero-pattern"></div>
+  <div class="bc-container">
+    <div class="bc-hero-content">
+      <div class="bc-hero-badge">Auditoria &amp; Consultoria</div>
+      <h1 data-slot="hero-title">Solidez que Protege.<br><span>Estrategia que Transforma.</span></h1>
+      <p data-slot="hero-subtitle">Ha mais de duas decadas, a CONDOR entrega auditoria independente e consultoria estrategica para empresas que exigem precisao, integridade e resultados comprovados.</p>
+      <div class="bc-hero-actions">
+        <a href="#contato" class="bc-btn bc-btn-accent">
+          Fale com um Especialista
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+        </a>
+        <a href="#servicos" class="bc-btn bc-btn-outline-white">Conheca Nossa Atuacao</a>
+      </div>
+    </div>
+    <div class="bc-hero-image">
+      <img src="hero-image.png" alt="Consultora senior analisando relatorios financeiros em escritorio corporativo">
+    </div>
+  </div>
+  <div class="bc-hero-accent-line"></div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="bc-trust-bar" data-slot="trust-bar">
+  <div class="bc-container">
+    <div class="bc-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      Auditoria Independente
+    </div>
+    <div class="bc-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      Consultoria Tributaria
+    </div>
+    <div class="bc-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      Compliance
+    </div>
+    <div class="bc-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      Gestao de Riscos
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT / INSTITUCIONAL ===== -->
+<section class="bc-section" id="institucional" data-slot="about">
+  <div class="bc-container">
+    <div class="bc-section-header">
+      <span class="bc-section-badge">Quem Somos</span>
+      <h2 data-slot="about-title">A Confianca que Sustenta Decisoes Criticas</h2>
+      <div class="bc-section-divider"></div>
+      <p data-slot="about-subtitle">Auditoria independente e consultoria estrategica com o rigor que o mercado exige e a proximidade que o seu negocio merece.</p>
+    </div>
+    <div class="bc-about-grid">
+      <div class="bc-about-image-wrapper">
+        <div class="bc-about-image">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Equipe CONDOR" data-slot="about-image">
+        </div>
+        <div class="bc-about-accent-box">
+          <span class="number">25+</span>
+          <span class="label">Anos de Excelencia</span>
+        </div>
+      </div>
+      <div class="bc-about-text" data-slot="about-content">
+        <h3>Precisao Tecnica. Compromisso com Resultados.</h3>
+        <p>A CONDOR Auditoria &amp; Consultoria nasceu da conviccao de que empresas solidas se constroem sobre alicerces de transparencia, conformidade e inteligencia estrategica. Ao longo de mais de 25 anos, consolidamos uma reputacao de rigor tecnico e comprometimento inabalavel com os resultados dos nossos clientes.</p>
+        <p>Nossa equipe reune profissionais com vasta experiencia em auditoria independente, consultoria tributaria, gestao de riscos e compliance. Cada projeto e conduzido com metodologia propria, analise aprofundada e recomendacoes praticas que geram impacto real na operacao, na governanca e na rentabilidade do seu negocio.</p>
+        <p>Nao entregamos relatorios para gaveta &mdash; entregamos clareza para decisoes que importam.</p>
+        <div class="bc-about-cta">
+          <a href="#servicos" class="bc-btn bc-btn-outline">
+            Conheca Nossa Atuacao
+            <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="bc-stats-section" data-slot="stats">
+  <div class="bc-container">
+    <div class="bc-stats-grid">
+      <div class="bc-stat">
+        <div class="bc-stat-number" data-slot="stat-1-number">25+</div>
+        <div class="bc-stat-label" data-slot="stat-1-label">Anos de Excelencia</div>
+      </div>
+      <div class="bc-stat">
+        <div class="bc-stat-number" data-slot="stat-2-number">500+</div>
+        <div class="bc-stat-label" data-slot="stat-2-label">Empresas Atendidas</div>
+      </div>
+      <div class="bc-stat">
+        <div class="bc-stat-number" data-slot="stat-3-number">50+</div>
+        <div class="bc-stat-label" data-slot="stat-3-label">Especialistas na Equipe</div>
+      </div>
+      <div class="bc-stat">
+        <div class="bc-stat-number" data-slot="stat-4-number">98%</div>
+        <div class="bc-stat-label" data-slot="stat-4-label">Indice de Satisfacao</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="bc-section bc-section-light" id="servicos" data-slot="services">
+  <div class="bc-container">
+    <div class="bc-section-header">
+      <span class="bc-section-badge">Servicos</span>
+      <h2 data-slot="services-title">Areas de Atuacao</h2>
+      <div class="bc-section-divider"></div>
+      <p data-slot="services-subtitle">Solucoes em auditoria e consultoria desenhadas para proteger, otimizar e fortalecer o seu negocio.</p>
+    </div>
+    <div class="bc-services-grid">
+
+      <div class="bc-service-card" data-slot="service-1">
+        <div class="bc-service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        </div>
+        <h4>Auditoria Independente</h4>
+        <p>Exame rigoroso das demonstracoes financeiras conforme normas brasileiras e internacionais. Credibilidade para o mercado, seguranca para a sua gestao.</p>
+      </div>
+
+      <div class="bc-service-card" data-slot="service-2">
+        <div class="bc-service-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </div>
+        <h4>Consultoria Tributaria</h4>
+        <p>Planejamento e revisao fiscal que identificam oportunidades reais de economia tributaria, sempre dentro da legalidade e com total rastreabilidade.</p>
+      </div>
+
+      <div class="bc-service-card" data-slot="service-3">
+        <div class="bc-service-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+        </div>
+        <h4>Consultoria em Lideranca</h4>
+        <p>Programas estruturados de desenvolvimento de lideranca que transformam gestores em agentes de resultado e fortalecem a cultura organizacional.</p>
+      </div>
+
+      <div class="bc-service-card" data-slot="service-4">
+        <div class="bc-service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        </div>
+        <h4>Gestao de Riscos</h4>
+        <p>Mapeamento, analise e mitigacao de riscos corporativos. Protegemos o patrimonio da sua empresa antes que as ameacas se materializem.</p>
+      </div>
+
+      <div class="bc-service-card" data-slot="service-5">
+        <div class="bc-service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h4>Compliance</h4>
+        <p>Implementacao de programas de conformidade e controles internos alinhados as melhores praticas do mercado, reduzindo exposicao regulatoria e reputacional.</p>
+      </div>
+
+      <div class="bc-service-card" data-slot="service-6">
+        <div class="bc-service-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h4>Parcerias Estrategicas</h4>
+        <p>Acesso a uma rede de consultores altamente qualificados, criteriosamente selecionados pela CONDOR para projetos que exigem competencias especificas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFORMATIVOS / MERCADO FINANCEIRO ===== -->
+<section class="bc-market-section" id="informativos" data-slot="market-data">
+  <div class="bc-container">
+    <div class="bc-section-header">
+      <span class="bc-section-badge">Informativos</span>
+      <h2>Mercado Financeiro</h2>
+      <div class="bc-section-divider"></div>
+      <p>Acompanhe os principais indicadores economicos em tempo real.</p>
+    </div>
+
+    <!-- Live TradingView Widgets -->
+    <div class="bc-market-grid-live">
+
+      <div class="bc-market-card" data-slot="market-usd">
+        <div class="bc-market-card-header">
+          <h4>Dolar</h4>
+          <span class="bc-live-dot" title="Tempo real"></span>
+        </div>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+          {
+            "symbol": "FX_IDC:USDBRL",
+            "width": "100%",
+            "isTransparent": true,
+            "colorTheme": "light",
+            "locale": "br"
+          }
+          </script>
+        </div>
+      </div>
+
+      <div class="bc-market-card" data-slot="market-ibov">
+        <div class="bc-market-card-header">
+          <h4>Ibovespa</h4>
+          <span class="bc-live-dot" title="Tempo real"></span>
+        </div>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+          {
+            "symbol": "INDEX:IBOV",
+            "width": "100%",
+            "isTransparent": true,
+            "colorTheme": "light",
+            "locale": "br"
+          }
+          </script>
+        </div>
+      </div>
+
+      <div class="bc-market-card" data-slot="market-btc">
+        <div class="bc-market-card-header">
+          <h4>Bitcoin</h4>
+          <span class="bc-live-dot" title="Tempo real"></span>
+        </div>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+          {
+            "symbol": "BINANCE:BTCBRL",
+            "width": "100%",
+            "isTransparent": true,
+            "colorTheme": "light",
+            "locale": "br"
+          }
+          </script>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Static Index Cards -->
+    <div class="bc-market-grid-indices">
+
+      <a href="https://investidor10.com.br/indices/cdi/" target="_blank" rel="noopener" class="bc-index-card" data-slot="index-cdi">
+        <div class="bc-index-card-top">
+          <h5>CDI</h5>
+          <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <span class="bc-index-subtitle">CDI acumulado</span>
+        <div class="bc-index-divider"></div>
+        <div class="bc-index-value">
+          <span class="bc-index-badge up">
+            <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+            +14,51
+          </span>
+          <span class="bc-index-period">ultimos 12M</span>
+        </div>
+        <div class="bc-index-points">Pontos: <strong>14,50%</strong></div>
+      </a>
+
+      <a href="https://investidor10.com.br/indices/ipca/" target="_blank" rel="noopener" class="bc-index-card" data-slot="index-ipca">
+        <div class="bc-index-card-top">
+          <h5>IPCA</h5>
+          <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <span class="bc-index-subtitle">IPCA 12M</span>
+        <div class="bc-index-divider"></div>
+        <div class="bc-index-value">
+          <span class="bc-index-badge down">
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+            -18,50
+          </span>
+          <span class="bc-index-period">ultimos 12M</span>
+        </div>
+        <div class="bc-index-points">Pontos: <strong>4,36%</strong></div>
+      </a>
+
+      <a href="https://investidor10.com.br/indices/selic/" target="_blank" rel="noopener" class="bc-index-card" data-slot="index-selic">
+        <div class="bc-index-card-top">
+          <h5>SELIC</h5>
+          <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <span class="bc-index-subtitle">Taxa SELIC</span>
+        <div class="bc-index-divider"></div>
+        <div class="bc-index-value">
+          <span class="bc-index-badge up">
+            <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+            +13,21
+          </span>
+          <span class="bc-index-period">ultimos 12M</span>
+        </div>
+        <div class="bc-index-points">Pontos: <strong>15,00%</strong></div>
+      </a>
+
+      <a href="https://investidor10.com.br/indices/ibov/" target="_blank" rel="noopener" class="bc-index-card" data-slot="index-ibov">
+        <div class="bc-index-card-top">
+          <h5>IBOV</h5>
+          <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <span class="bc-index-subtitle">Ibovespa</span>
+        <div class="bc-index-divider"></div>
+        <div class="bc-index-value">
+          <span class="bc-index-badge up">
+            <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+            +51,27
+          </span>
+          <span class="bc-index-period">ultimos 12M</span>
+        </div>
+        <div class="bc-index-points">Pontos: <strong>188.786,98</strong></div>
+      </a>
+
+      <a href="https://investidor10.com.br/indices/smll/" target="_blank" rel="noopener" class="bc-index-card" data-slot="index-smll">
+        <div class="bc-index-card-top">
+          <h5>SMLL</h5>
+          <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <span class="bc-index-subtitle">Small Cap</span>
+        <div class="bc-index-divider"></div>
+        <div class="bc-index-value">
+          <span class="bc-index-badge up">
+            <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+            +41,18
+          </span>
+          <span class="bc-index-period">ultimos 12M</span>
+        </div>
+        <div class="bc-index-points">Pontos: <strong>2.587,23</strong></div>
+      </a>
+
+      <a href="https://investidor10.com.br/indices/idiv/" target="_blank" rel="noopener" class="bc-index-card" data-slot="index-idiv">
+        <div class="bc-index-card-top">
+          <h5>IDIV</h5>
+          <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+        </div>
+        <span class="bc-index-subtitle">Dividendos</span>
+        <div class="bc-index-divider"></div>
+        <div class="bc-index-value">
+          <span class="bc-index-badge up">
+            <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+            +46,17
+          </span>
+          <span class="bc-index-period">ultimos 12M</span>
+        </div>
+        <div class="bc-index-points">Pontos: <strong>9.812,45</strong></div>
+      </a>
+
+    </div>
+
+    <div class="bc-market-footer">
+      <p>Cotacoes em tempo real via <a href="https://br.tradingview.com/" target="_blank" rel="noopener">TradingView</a>. Indices com dados de <a href="https://investidor10.com.br/" target="_blank" rel="noopener">Investidor10</a>. Clique nos cards para mais detalhes.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA / NEWSLETTER ===== -->
+<section class="bc-cta-section" id="contato" data-slot="cta">
+  <div class="bc-container">
+    <div class="bc-cta-grid">
+      <div class="bc-cta-form-box">
+        <h3 data-slot="cta-title">Inteligencia de Mercado na sua Caixa de Entrada</h3>
+        <p data-slot="cta-subtitle">Receba alertas, analises e informativos exclusivos sobre auditoria, tributacao e governanca corporativa.</p>
+        <form class="bc-cta-form" data-slot="cta-form">
+          <input type="email" placeholder="Informe seu e-mail corporativo" required>
+          <button type="submit" class="bc-btn bc-btn-accent">Cadastrar</button>
+        </form>
+      </div>
+      <div class="bc-cta-links-col">
+        <img src="logos/logo-white.png" alt="" class="bc-cta-watermark" aria-hidden="true">
+        <ul class="bc-cta-nav" data-slot="cta-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#institucional">Institucional</a></li>
+          <li><a href="#servicos">Areas de Atuacao</a></li>
+          <li><a href="#informativos">Informativos</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+        <ul class="bc-social-list" data-slot="social-links">
+          <!-- LinkedIn -->
+          <li><a href="#" class="bc-social-link" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill="currentColor"/></svg></a></li>
+          <!-- X (Twitter) -->
+          <li><a href="#" class="bc-social-link" title="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/></svg></a></li>
+          <!-- Instagram -->
+          <li><a href="#" class="bc-social-link" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" fill="currentColor"/></svg></a></li>
+          <!-- Facebook -->
+          <li><a href="#" class="bc-social-link" title="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" fill="currentColor"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bc-footer" data-slot="footer">
+  <div class="bc-container">
+    <div class="bc-footer-logo">
+      <img src="logos/logo-white.png" alt="CONDOR" data-slot="footer-logo">
+    </div>
+    <p class="bc-footer-copy" data-slot="footer-copy">2026 CONDOR Auditoria &amp; Consultoria. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+<a href="https://wa.me/5551982122371?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20Condor." class="bc-whatsapp-float" target="_blank" rel="noopener" title="Fale conosco pelo WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<!-- ===== Scripts ===== -->
+<script>
+(function() {
+  var navbar = document.querySelector('.bc-navbar');
+  var hamburger = document.getElementById('bc-hamburger');
+  var mobileMenu = document.getElementById('bc-mobile-menu');
+  var overlay = document.getElementById('bc-mobile-overlay');
+  var mobileLinks = document.querySelectorAll('.bc-mobile-link');
+
+  // Scroll - navbar shadow
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+  mobileLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var offset = navbar.offsetHeight + 16;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

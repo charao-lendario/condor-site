@@ -1,0 +1,223 @@
+/* ===================================================================
+   CONDOR Auditoria & Consultoria — BrandCraft CSS Custom Properties
+   Extraido de: https://www.condorauditoria.com.br/
+   Gerado em: 2026-03-01
+   Framework base: Elixir (Bootstrap 5)
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+:root {
+  /* ── Brand Colors ── */
+  --bc-color-primary: #2a3855;
+  --bc-color-primary-hover: #222d44;
+  --bc-color-primary-rgb: 42, 56, 85;
+  --bc-color-secondary: #7f7f7f;
+  --bc-color-secondary-rgb: 127, 127, 127;
+  --bc-color-accent: #fdd428;
+  --bc-color-accent-hover: #fddd53;
+
+  /* ── Semantic Colors ── */
+  --bc-color-success: #36b36a;
+  --bc-color-info: #3680b3;
+  --bc-color-warning: #fdd428;
+  --bc-color-danger: #b33641;
+
+  /* ── Text Colors ── */
+  --bc-color-text: #6a6a6a;
+  --bc-color-text-heading: #2a3855;
+  --bc-color-text-muted: #7f7f7f;
+  --bc-color-text-white: #ffffff;
+  --bc-color-link: #2a3855;
+  --bc-color-link-hover: #222d44;
+
+  /* ── Background Colors ── */
+  --bc-bg-body: #ffffff;
+  --bc-bg-alt: #fafafa;
+  --bc-bg-dark: #1f1f1f;
+  --bc-bg-footer-section: #3D4C6F;
+  --bc-bg-footer: #2a3855;
+  --bc-bg-input: #fafafa;
+  --bc-bg-input-addon: #f2f2f2;
+
+  /* ── Gray Scale ── */
+  --bc-gray-100: #fafafa;
+  --bc-gray-200: #f2f2f2;
+  --bc-gray-300: #e1e1e1;
+  --bc-gray-400: #bebebe;
+  --bc-gray-500: #949494;
+  --bc-gray-600: #7f7f7f;
+  --bc-gray-700: #6a6a6a;
+  --bc-gray-800: #555555;
+  --bc-gray-900: #404040;
+  --bc-gray-1000: #2b2b2b;
+  --bc-gray-1100: #1f1f1f;
+
+  /* ── Typography ── */
+  --bc-font-heading: 'Montserrat', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --bc-font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --bc-font-mono: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --bc-font-size-base: 1rem;
+  --bc-font-size-sm: 0.875rem;
+  --bc-font-size-lg: 1.125rem;
+  --bc-font-size-xl: 1.5rem;
+  --bc-font-size-2xl: 2rem;
+  --bc-font-size-3xl: 2.5rem;
+  --bc-font-size-4xl: 3.5rem;
+  --bc-line-height: 1.45;
+  --bc-line-height-tight: 1.1;
+  --bc-font-weight-light: 300;
+  --bc-font-weight-regular: 400;
+  --bc-font-weight-medium: 500;
+  --bc-font-weight-semibold: 600;
+  --bc-font-weight-bold: 700;
+  --bc-font-weight-extrabold: 800;
+
+  /* ── Borders ── */
+  --bc-border-color: #e1e1e1;
+  --bc-border-radius: 0.375rem;
+  --bc-border-radius-lg: 0.75rem;
+  --bc-border-radius-pill: 50rem;
+
+  /* ── Shadows ── */
+  --bc-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+  --bc-shadow-sm: 0 0 1.563rem rgba(0, 0, 0, 0.08);
+  --bc-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
+  --bc-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+
+  /* ── Spacing ── */
+  --bc-spacing-xs: 0.25rem;
+  --bc-spacing-sm: 0.5rem;
+  --bc-spacing-md: 1rem;
+  --bc-spacing-lg: 1.5rem;
+  --bc-spacing-xl: 2rem;
+  --bc-spacing-2xl: 3rem;
+  --bc-spacing-3xl: 4rem;
+  --bc-spacing-4xl: 6rem;
+
+  /* ── Layout ── */
+  --bc-container-max: 1140px;
+  --bc-grid-gutter: 1.5rem;
+
+  /* ── Transitions ── */
+  --bc-transition: all 0.3s ease;
+  --bc-transition-fast: all 0.15s ease;
+}
+
+/* ── Base Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--bc-font-body);
+  font-size: var(--bc-font-size-base);
+  font-weight: var(--bc-font-weight-regular);
+  line-height: var(--bc-line-height);
+  color: var(--bc-color-text);
+  background: var(--bc-bg-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--bc-font-heading);
+  color: var(--bc-color-text-heading);
+  line-height: var(--bc-line-height-tight);
+  font-weight: var(--bc-font-weight-bold);
+}
+
+a {
+  color: var(--bc-color-link);
+  text-decoration: none;
+  transition: var(--bc-transition-fast);
+}
+a:hover {
+  color: var(--bc-color-link-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Utility Classes ── */
+.bc-container {
+  width: 100%;
+  max-width: var(--bc-container-max);
+  margin: 0 auto;
+  padding: 0 var(--bc-grid-gutter);
+}
+
+.bc-btn {
+  display: inline-block;
+  font-family: var(--bc-font-heading);
+  font-weight: var(--bc-font-weight-semibold);
+  font-size: var(--bc-font-size-sm);
+  line-height: 1.5;
+  padding: 0.625rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: var(--bc-border-radius);
+  cursor: pointer;
+  transition: var(--bc-transition);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bc-btn-primary {
+  background: var(--bc-color-primary);
+  color: var(--bc-color-text-white);
+  border-color: var(--bc-color-primary);
+}
+.bc-btn-primary:hover {
+  background: var(--bc-color-primary-hover);
+  border-color: var(--bc-color-primary-hover);
+}
+
+.bc-btn-accent {
+  background: var(--bc-color-accent);
+  color: var(--bc-color-primary);
+  border-color: var(--bc-color-accent);
+}
+.bc-btn-accent:hover {
+  background: var(--bc-color-accent-hover);
+  border-color: var(--bc-color-accent-hover);
+}
+
+.bc-btn-outline {
+  background: transparent;
+  color: var(--bc-color-primary);
+  border-color: var(--bc-color-primary);
+}
+.bc-btn-outline:hover {
+  background: var(--bc-color-primary);
+  color: var(--bc-color-text-white);
+}
+
+.bc-card {
+  background: var(--bc-bg-body);
+  border-radius: var(--bc-border-radius-lg);
+  box-shadow: var(--bc-shadow);
+  padding: var(--bc-spacing-xl);
+  transition: var(--bc-transition);
+}
+.bc-card:hover {
+  box-shadow: var(--bc-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.bc-badge {
+  display: inline-block;
+  font-family: var(--bc-font-heading);
+  font-size: 0.75rem;
+  font-weight: var(--bc-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--bc-border-radius-pill);
+  background: rgba(var(--bc-color-primary-rgb), 0.1);
+  color: var(--bc-color-primary);
+}

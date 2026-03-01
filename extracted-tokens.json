@@ -1,0 +1,124 @@
+{
+  "brand": "Condor Auditoria & Consultoria",
+  "source": "https://www.condorauditoria.com.br/",
+  "extractedAt": "2026-03-01",
+  "theme": "light",
+  "framework": "Elixir (Bootstrap 5)",
+
+  "colors": {
+    "primary": "#2a3855",
+    "primaryHover": "#222d44",
+    "secondary": "#7f7f7f",
+    "success": "#36b36a",
+    "info": "#3680b3",
+    "warning": "#fdd428",
+    "danger": "#b33641",
+    "light": "#fafafa",
+    "dark": "#1f1f1f",
+    "white": "#ffffff",
+    "black": "#000000",
+
+    "text": {
+      "body": "#6a6a6a",
+      "heading": "#2a3855",
+      "muted": "#7f7f7f",
+      "link": "#2a3855",
+      "linkHover": "#222d44"
+    },
+
+    "background": {
+      "body": "#ffffff",
+      "footerSection": "#3D4C6F",
+      "footer": "#2a3855",
+      "inputAddon": "#f2f2f2",
+      "alt": "#fafafa"
+    },
+
+    "border": {
+      "default": "#e1e1e1",
+      "inputFocus": "#959caa"
+    },
+
+    "gray": {
+      "100": "#fafafa",
+      "200": "#f2f2f2",
+      "300": "#e1e1e1",
+      "400": "#bebebe",
+      "500": "#949494",
+      "600": "#7f7f7f",
+      "700": "#6a6a6a",
+      "800": "#555555",
+      "900": "#404040",
+      "1000": "#2b2b2b",
+      "1100": "#1f1f1f"
+    },
+
+    "social": {
+      "facebook": "#3b5998",
+      "twitter": "#1da1f2",
+      "linkedin": "#0077b5",
+      "googlePlus": "#db4437",
+      "youtube": "#ff0001"
+    }
+  },
+
+  "typography": {
+    "fontHeading": "Montserrat, Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "fontBody": "Open Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    "fontMono": "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+    "baseFontSize": "1rem",
+    "baseLineHeight": 1.45,
+    "fontWeights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800
+    },
+    "headingColor": "#404040",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap"
+  },
+
+  "shadows": {
+    "default": "0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07)",
+    "sm": "0 0 1.563rem rgba(0, 0, 0, 0.08)",
+    "lg": "0 1rem 4rem rgba(0, 0, 0, 0.175)",
+    "inset": "inset 0 1px 2px rgba(0, 0, 0, 0.075)"
+  },
+
+  "borders": {
+    "color": "#e1e1e1",
+    "radius": "0.375rem",
+    "radiusLg": "0.75rem"
+  },
+
+  "layout": {
+    "containerMaxWidth": "1140px",
+    "gridGutter": "1.5rem"
+  },
+
+  "logos": {
+    "logoDefault": "logos/logo.png",
+    "logoWhite": "logos/logo-white.png",
+    "icon": "logos/icon.png"
+  },
+
+  "sections": {
+    "hero": {
+      "type": "slider",
+      "slides": [
+        { "title": "Consultores Experientes", "subtitle": "Experiencia para ajudar as empresas a encontrarem solucoes inteligentes" },
+        { "title": "Consultoria em Lideranca", "subtitle": "Ajudando companhias a atingir um novo estagio" },
+        { "title": "Parcerias em Crescimento", "subtitle": "Conecte-se com os principais consultores cuidadosamente selecionados pela Condor" }
+      ]
+    },
+    "newsletter": {
+      "title": "Cadastre-se para receber alertas",
+      "subtitle": "Fique por dentro das ultimas novidades do mercado financeiro."
+    },
+    "footer": {
+      "copyright": "2026 | CONDOR - Auditoria & Consultoria"
+    }
+  }
+}
